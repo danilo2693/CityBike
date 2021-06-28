@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { App } from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { SocketContext, socket } from "./context/socket";
 ReactDOM.render(
   <SocketContext.Provider value={socket}>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </SocketContext.Provider>,
   document.getElementById("root")
 );
