@@ -8,7 +8,7 @@ const citybikeurl = "http://api.citybik.es/v2/networks/decobike-miami-beach";
 const port = process.env.PORT || 4001;
 const index = require("./routes/index");
 const app = express();
-const intervalInMilliseconds = 10000;
+const intervalInMilliseconds = 5000;
 
 app.use(cors());
 app.use(index);
