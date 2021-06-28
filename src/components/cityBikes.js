@@ -33,7 +33,6 @@ export const CityBikes = () => {
       cityName: name,
     });
     setStations(stations);
-    addStations(stations);
     setStartSocket(true);
   };
 
