@@ -1,40 +1,66 @@
-import React, { Component } from "react";
-import socketIOClient from "socket.io-client";
-import { Map, TileLayer, Marker, Popup } from "react-leaflet";
+import React, { useEffect } from "react";
+import { NavLink, Route, Switch } from "react-router-dom";
+import { CityBikes } from "./components/cityBikes";
+import { HistoryBikes } from "./components/historyBikes";
+import { SelectedDate } from "./components/selectedDate";
+import { useStations } from "./hooks/useStations";
 
-class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      response: false,
-      endpoint: "http://127.0.0.1:4001",
-      lat: 51.505,
-      lng: -0.09,
-      zoom: 13
-    };
-
-  }
-  componentDidMount() {
-    const { endpoint } = this.state;
-    const socket = socketIOClient(endpoint);
-   
-  }
-  render() {
-    const { response } = this.state;
-    const position = [this.state.lat, this.state.lng]
-    return (
-
-      <div className="map">
-        <h1> City Bikes in Miami </h1>
-        <Map center={position} zoom={this.state.zoom}>
-          <TileLayer
-            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-        </Map>
+export const App = () => {
+  const { reset } = useStations();
+  useEffect(() => {
+    reset();
+  }, []);
+  return (
+    <div className="container mt-4">
+      <nav className="navbar navbar-expand-lg navbar-light bg-info bg-gradient justify-content-between mb-4">
+        <span className="navbar-brand p-2">CityBike</span>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <NavLink className="nav-link" activeClassName="active" to="/">
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link"
+                  activeClassName="active"
+                  to="/history-bikes"
+                >
+                  History
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <Switch>
+        <Route exact path="/" component={CityBikes} />
+        <Route path="/history-bikes" component={HistoryBikes} />
+        <Route path="/selected-date/:date" component={SelectedDate} />
+      </Switch>
+      <div className="mt-4 mb-4">
+        Icons made by{" "}
+        <a href="https://www.freepik.com" title="Freepik">
+          Freepik
+        </a>{" "}
+        from{" "}
+        <a href="https://www.flaticon.com/" title="Flaticon">
+          www.flaticon.com
+        </a>
       </div>
-    );
-  }
-}
-export default App;
+    </div>
+  );
+};
