@@ -5,9 +5,9 @@ import { SocketContext } from "../context/socket";
 import { useStations } from "../hooks/useStations";
 export const CityBikes = () => {
   const socket = useContext(SocketContext);
-  const endpoint = "http://127.0.0.1:4001";
   const zoom = 13;
-  const cityBikeInformationEndpoint = `${endpoint}/cityBikeInformation`;
+  console.log(process.env);
+  const cityBikeInformationEndpoint = `${process.env.REACT_APP_BASE_URL}/cityBikeInformation`;
   const [information, setInformation] = useState({
     lat: 51.505,
     lng: -0.09,
