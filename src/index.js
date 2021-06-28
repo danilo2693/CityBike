@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { SocketContext, socket } from "./context/socket";
 ReactDOM.render(
   <SocketContext.Provider value={socket}>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
     </BrowserRouter>
   </SocketContext.Provider>,
