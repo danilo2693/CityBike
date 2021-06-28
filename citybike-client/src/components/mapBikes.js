@@ -4,6 +4,7 @@ import { Icon } from "leaflet";
 
 export const MapBikes = ({ position, stations, zoom }) => {
   const path = process.env.PUBLIC_URL;
+  console.log(path);
   const icon = new Icon({
     iconSize: [20, 20],
     iconUrl: `${path}/bike.png`,
