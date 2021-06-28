@@ -26,7 +26,7 @@ export const useStations = () => {
   const reset = () => {
     localStorage.setItem(
       "stationsHistory",
-      JSON.stringify([{ date: new Date(), stations: [] }])
+      JSON.stringify([])
     );
   };
 
