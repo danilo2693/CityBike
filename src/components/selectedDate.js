@@ -19,7 +19,7 @@ export const SelectedDate = ({
     : [];
 
   return (
-    <div className="map">
+    <div className="card p-4 map animate__animated animate__fadeIn">
       {date !== "" && (
         <div className="d-flex justify-content-start align-items-center mb-4">
           <NavLink className="btn btn-primary me-2" activeClassName="active" to={`/history-bikes`}>Back</NavLink>

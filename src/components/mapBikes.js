@@ -4,13 +4,12 @@ import { Icon } from "leaflet";
 
 export const MapBikes = ({ position, stations, zoom }) => {
   const path = process.env.PUBLIC_URL;
-  console.log(path);
   const icon = new Icon({
     iconSize: [20, 20],
     iconUrl: `${path}/bike.png`,
   });
   return (
-    <Map center={position} zoom={zoom}>
+    <Map center={position} zoom={zoom} className="card">
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -18,36 +18,40 @@ export const HistoryBikes = () => {
 
   return (
     <>
-      <h1 className="mb-4">History bikes</h1>
-      <div className="scrolled-table">
-        <table className="table mt-4">
-          <thead >
-            <tr className="fixed-th border-bottom">
-              <th scope="col">#</th>
-              <th scope="col">Date</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {stations.map((register, index) => (
-              <tr key={index}>
-                <td>{index}</td>
-                <td>
-                  {moment(register.date).format("MMMM DD YYYY, h:mm:ss a")}
-                </td>
-                <td>
-                  <NavLink
-                    className="nav-link"
-                    activeClassName="active"
-                    to={`/selected-date/${register.date}`}
-                  >
-                    <span className="material-icons">visibility</span>
-                  </NavLink>
-                </td>
+      <div className="card p-4">
+        <h1 className="mb-4 animate__animated animate__fadeIn">
+          History bikes
+        </h1>
+        <div className="scrolled-table animate__animated animate__fadeIn">
+          <table className="table mt-4">
+            <thead>
+              <tr className="fixed-th border-bottom">
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {stations.map((register, index) => (
+                <tr key={index} className="animate__animated animate__fadeIn">
+                  <td>{index}</td>
+                  <td>
+                    {moment(register.date).format("MMMM DD YYYY, h:mm:ss a")}
+                  </td>
+                  <td>
+                    <NavLink
+                      className="nav-link"
+                      activeClassName="active"
+                      to={`/selected-date/${register.date}`}
+                    >
+                      <span className="material-icons">visibility</span>
+                    </NavLink>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );

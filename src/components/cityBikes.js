@@ -6,7 +6,6 @@ import { useStations } from "../hooks/useStations";
 export const CityBikes = () => {
   const socket = useContext(SocketContext);
   const zoom = 13;
-  console.log(process.env);
   const cityBikeInformationEndpoint = `${process.env.REACT_APP_BASE_URL}/cityBikeInformation`;
   const [information, setInformation] = useState({
     lat: 51.505,
@@ -48,7 +47,7 @@ export const CityBikes = () => {
 
   const position = [information.lat, information.lng];
   return (
-    <div className="map">
+    <div className="card p-4 map animate__animated animate__fadeIn">
       {information.cityName !== "" && (
         <h1 className="mb-4">
           {information.cityName} - {information.locationName}

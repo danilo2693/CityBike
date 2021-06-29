@@ -51,7 +51,7 @@ export const App = () => {
         <Route path="/history-bikes" component={HistoryBikes} />
         <Route path="/selected-date/:date" component={SelectedDate} />
       </Switch>
-      <div className="mt-4 mb-4">
+      <div className="mt-4 mb-4 animate__animated animate__fadeIn">
         Icons made by{" "}
         <a href="https://www.freepik.com" title="Freepik">
           Freepik
