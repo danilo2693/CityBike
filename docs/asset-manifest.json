@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/CityBike/static/css/main.a7ab1c4e.chunk.css",
-    "main.js": "/CityBike/static/js/main.bb388c7a.chunk.js",
-    "main.js.map": "/CityBike/static/js/main.bb388c7a.chunk.js.map",
+    "main.css": "/CityBike/static/css/main.c36007e5.chunk.css",
+    "main.js": "/CityBike/static/js/main.b2317893.chunk.js",
+    "main.js.map": "/CityBike/static/js/main.b2317893.chunk.js.map",
     "runtime-main.js": "/CityBike/static/js/runtime-main.6e0f1858.js",
     "runtime-main.js.map": "/CityBike/static/js/runtime-main.6e0f1858.js.map",
-    "static/js/2.ef0380a1.chunk.js": "/CityBike/static/js/2.ef0380a1.chunk.js",
-    "static/js/2.ef0380a1.chunk.js.map": "/CityBike/static/js/2.ef0380a1.chunk.js.map",
+    "static/js/2.a3606ac4.chunk.js": "/CityBike/static/js/2.a3606ac4.chunk.js",
+    "static/js/2.a3606ac4.chunk.js.map": "/CityBike/static/js/2.a3606ac4.chunk.js.map",
     "index.html": "/CityBike/index.html",
-    "static/css/main.a7ab1c4e.chunk.css.map": "/CityBike/static/css/main.a7ab1c4e.chunk.css.map",
-    "static/js/2.ef0380a1.chunk.js.LICENSE.txt": "/CityBike/static/js/2.ef0380a1.chunk.js.LICENSE.txt"
+    "static/css/main.c36007e5.chunk.css.map": "/CityBike/static/css/main.c36007e5.chunk.css.map",
+    "static/js/2.a3606ac4.chunk.js.LICENSE.txt": "/CityBike/static/js/2.a3606ac4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6e0f1858.js",
-    "static/js/2.ef0380a1.chunk.js",
-    "static/css/main.a7ab1c4e.chunk.css",
-    "static/js/main.bb388c7a.chunk.js"
+    "static/js/2.a3606ac4.chunk.js",
+    "static/css/main.c36007e5.chunk.css",
+    "static/js/main.b2317893.chunk.js"
   ]
 }
