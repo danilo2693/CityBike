@@ -3,6 +3,7 @@ import axios from "axios";
 import { MapBikes } from "./mapBikes";
 import { SocketContext } from "../context/socket";
 import { useStations } from "../hooks/useStations";
+
 export const CityBikes = () => {
   const socket = useContext(SocketContext);
   const zoom = 13;
@@ -15,7 +16,12 @@ export const CityBikes = () => {
   });
   const [stations, setStations] = useState([]);
   const [startSocket, setStartSocket] = useState(false);
+  const [showInformation, setShowInformation] = useState(false);
   const { addStations } = useStations();
+
+  const handleShowInformation = (state) => {
+    setShowInformation(state);
+  };
 
   useEffect(() => {
     getCityBikeInformation();
@@ -49,9 +55,29 @@ export const CityBikes = () => {
   return (
     <div className="card p-4 map animate__animated animate__fadeIn">
       {information.cityName !== "" && (
-        <h1 className="mb-4">
-          {information.cityName} - {information.locationName}
-        </h1>
+        <div className="d-flex justify-content-between align-items-center">
+          <h1 className="mb-4">
+            {information.cityName} - {information.locationName}
+          </h1>
+
+          <div className="information-container">
+            <span
+              className="pointer material-icons information-icon "
+              onMouseOver={() => handleShowInformation(true)}
+              onMouseLeave={() => handleShowInformation(false)}
+            >
+              information
+            </span>
+            {showInformation && (
+              <div className="information-content animate__animated animate__fadeInLeft">
+                <h3 className="mb-0">Show availability</h3>
+                <p className="mt-4">
+                  To see availability, click on a bike on the map
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
       )}
       <MapBikes position={position} stations={stations} zoom={zoom} />
     </div>

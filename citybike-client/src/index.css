@@ -135,4 +135,42 @@ thead > .fixed-th > th {
 
 .leaflet-marker-pane > img {
   cursor: pointer;
+  background: white;
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.information-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  color: #003b46;
+}
+
+.information-content {
+  width: 350px;
+  position: absolute;
+  background-color: white;
+  right: 10px;
+  z-index: 10;
+  top: 45px;
+  border: 1px solid #e9ecef;
+  padding: 10px;
+  box-shadow: 0 1px 6px 0 rgb(169 184 200 / 45%);
+  border-radius: 4px;
+  @media (max-width: 565px) {
+    width: 330px;
+  }
+}
+
+.information-container{
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.pointer {
+  cursor: pointer;
 }
