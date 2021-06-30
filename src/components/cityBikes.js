@@ -21,7 +21,7 @@ export const CityBikes = () => {
     getCityBikeInformation();
   }, []);
 
-  const getCityBikeInformation = async function () {
+  const getCityBikeInformation = async () => {
     const {
       data: { location, name, stations },
     } = await axios.get(cityBikeInformationEndpoint);
