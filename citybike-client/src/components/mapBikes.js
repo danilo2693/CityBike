@@ -25,7 +25,7 @@ export const MapBikes = ({ position, stations, zoom }) => {
             <Popup>
               <h6>Name station: {station.name}</h6>
               <hr />
-              <div className="d-flex justify-content-between">
+              <div className="text-center">
                 <p>Empty slots: {station.empty_slots}</p>
                 <p>Free bikes: {station.free_bikes}</p>
               </div>
